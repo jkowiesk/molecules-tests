@@ -1,4 +1,3 @@
-import Scroll from '@/templates/Scroll'
 import dynamic from 'next/dynamic'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
@@ -10,11 +9,7 @@ const Stage = dynamic(() => import('@/components/canvas/Stage'), { ssr: false })
 
 // Dom components go here
 export default function Page(props) {
-  return (
-    <Scroll>
-      <span></span>
-    </Scroll>
-  )
+  return <span></span>
 }
 
 // Canvas components go here
