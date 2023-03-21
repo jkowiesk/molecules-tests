@@ -1,3 +1,5 @@
+import { parseSdf } from '@/utils/sdfParser'
+import fs from 'fs'
 import dynamic from 'next/dynamic'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
@@ -17,5 +19,9 @@ export default function Page(props) {
 Page.canvas = (props) => <Stage />
 
 export async function getStaticProps() {
+  const sdf = fs.readFileSync('./public/molecules/water.sdf', 'utf8')
+  const parsedSdf = parseSdf(sdf)
+  console.log(parsedSdf)
+
   return { props: { title: 'Main' } }
 }
