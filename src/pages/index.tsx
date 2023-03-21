@@ -16,12 +16,14 @@ export default function Page(props) {
 
 // Canvas components go here
 // It will receive same props as the Page component (from getStaticProps, etc.)
-Page.canvas = (props) => <Stage />
+Page.canvas = (props) => {
+  console.log(props)
+  return <Stage {...props} />
+}
 
 export async function getStaticProps() {
   const sdf = fs.readFileSync('./public/molecules/water.sdf', 'utf8')
-  const parsedSdf = parseSdf(sdf)
-  console.log(parsedSdf)
+  const molecule = parseSdf(sdf)
 
-  return { props: { title: 'Main' } }
+  return { props: { title: 'Main', molecule } }
 }

@@ -14,7 +14,7 @@ type Bond = {
   order: number
 }
 
-type Molecule = {
+export type Molecule = {
   atoms: Atom[]
   bonds: Bond[]
 }

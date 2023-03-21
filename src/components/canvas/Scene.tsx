@@ -7,7 +7,7 @@ export default function Scene({ children, ...props }) {
   // Everything defined in here will persist between route changes, only children are swapped
 
   return (
-    <Canvas camera={{ fov: 100, near: 0.1, far: 1000 }} {...props}>
+    <Canvas camera={{ fov: 100, near: 0.1, far: 1000 }}>
       <color args={['#080a0b']} attach='background' />
       <directionalLight intensity={0.1} position={[0, 1, 0]} />
       <ambientLight intensity={0.1} />
