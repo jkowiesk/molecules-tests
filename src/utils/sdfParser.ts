@@ -1,24 +1,6 @@
+import { Atom, Bond, Molecule } from './types'
+
 // Make sdf file parser to Molecule that contain atoms coordinates and bonds
-import * as fs from 'fs'
-
-type Atom = {
-  symbol: string
-  x: number
-  y: number
-  z: number
-}
-
-type Bond = {
-  atom1: number
-  atom2: number
-  order: number
-}
-
-export type Molecule = {
-  atoms: Atom[]
-  bonds: Bond[]
-}
-
 export function parseSdf(sdf: string): Molecule {
   // remove empty lines  lines and remove 2 first lines
   const lines = sdf
@@ -45,21 +27,21 @@ export function parseSdf(sdf: string): Molecule {
     if (/[a-zA-Z]/.test(rawLine)) {
       // it is atom line now parse it to atom object
 
-      // parse a to float
-      const a = parseFloat(line[0])
       // parse line
       const x = parseFloat(line[0])
       const y = parseFloat(line[1])
       const z = parseFloat(line[2])
+
+      const position: [number, number, number] = [x, y, z]
       const symbol = line[3]
 
-      atoms.push({ x, y, z, symbol })
+      atoms.push({ position, symbol })
     } else {
-      const atom1 = parseInt(line[0]) - 1
-      const atom2 = parseInt(line[1]) - 1
+      const atom1Idx = parseInt(line[0]) - 1
+      const atom2Idx = parseInt(line[1]) - 1
       const order = parseInt(line[2])
 
-      bonds.push({ atom1, atom2, order })
+      bonds.push({ atom1Idx, atom2Idx, order })
     }
   }
 

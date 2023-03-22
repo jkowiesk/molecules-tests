@@ -8,7 +8,7 @@ export default function Scene({ children, ...props }) {
 
   return (
     <Canvas camera={{ fov: 100, near: 0.1, far: 1000 }}>
-      <color args={['#080a0b']} attach='background' />
+      <color args={['#0891b2']} attach='background' />
       <directionalLight intensity={0.1} position={[0, 1, 0]} />
       <ambientLight intensity={0.1} />
       {children}

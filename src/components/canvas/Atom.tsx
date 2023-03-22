@@ -1,16 +1,18 @@
-import { Molecule } from '@/utils/sdfParser'
+import { ATOMS } from '@/utils/global'
+import { AtomInfo } from '@/utils/types'
 
 type Props = {
-  position: { x: number; y: number; z: number }
-  size: number
-  color: string
+  position: [number, number, number]
+  symbol: string
 }
 
-export default function Atom({ position: { x, y, z }, size, color }: Props) {
+export default function Atom({ position, symbol }: Props) {
+  const { radius, color }: AtomInfo = ATOMS.get(symbol)
+
   return (
     <>
-      <mesh position={[x, y, z]}>
-        <sphereGeometry args={[size, 30, 30]} />
+      <mesh position={position}>
+        <sphereGeometry args={[radius, 30, 30]} />
         <meshBasicMaterial color={color} />
       </mesh>
     </>

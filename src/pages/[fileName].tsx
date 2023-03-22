@@ -20,9 +20,14 @@ Page.canvas = (props) => {
   return <Stage {...props} />
 }
 
-export async function getStaticProps() {
-  const sdf = fs.readFileSync('./public/molecules/water.sdf', 'utf8')
-  const molecule = parseSdf(sdf)
+export async function getServerSideProps({ params }: any) {
+  try {
+    const sdf = fs.readFileSync(`./public/molecules/${params.fileName}.sdf`, 'utf8')
+    const molecule = parseSdf(sdf)
 
-  return { props: { title: 'Main', molecule } }
+    return { props: { title: 'Main', molecule } }
+  } catch (e) {
+    console.log(e)
+    return { notFound: true }
+  }
 }
