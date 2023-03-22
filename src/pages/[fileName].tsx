@@ -20,7 +20,7 @@ Page.canvas = (props) => {
   return <Stage {...props} />
 }
 
-export async function getServerSideProps({ params }: any) {
+export async function getStaticProps({ params }: any) {
   try {
     const sdf = fs.readFileSync(`./public/molecules/${params.fileName}.sdf`, 'utf8')
     const molecule = parseSdf(sdf)
@@ -30,4 +30,12 @@ export async function getServerSideProps({ params }: any) {
     console.log(e)
     return { notFound: true }
   }
+}
+export async function getStaticPaths() {
+  const files = fs.readdirSync('./public/molecules')
+  const fileNames = files.map((file) => file.replace('.sdf', ''))
+
+  const paths = fileNames.map((fileName) => ({ params: { fileName } }))
+
+  return { paths, fallback: false }
 }
