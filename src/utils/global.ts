@@ -18,6 +18,18 @@ export const ATOMS = new Map<string, AtomInfo>(
       radius: 0.4,
       color: 'red',
     },
+    N: {
+      radius: 0.4,
+      color: 'blue',
+    },
+    S: {
+      radius: 0.5,
+      color: 'yellow',
+    },
+    P: {
+      radius: 0.4,
+      color: 'orange',
+    },
   }),
 )
 
