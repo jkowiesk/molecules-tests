@@ -14,7 +14,6 @@ export default function Stage({ molecule }: Props) {
   // remove from atoms symbol property
   const moleculeRef = useRef<THREE.Group>()
   const { bonds, atoms } = molecule
-  const { camera } = useThree()
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { ATOMS } from '@/utils/global'
+import { ATOMS } from '@/utils/atoms'
 import { AtomInfo } from '@/utils/types'
 
 type Props = {
