@@ -1,7 +1,6 @@
 // make a map of all atoms for showing in r3f
 
 // make hashmap of all atoms for showing in r3f make radius and color
-
 import { AtomInfo } from './types'
 
 export const ATOMS = new Map<string, AtomInfo>(
@@ -30,7 +29,29 @@ export const ATOMS = new Map<string, AtomInfo>(
       radius: 0.4,
       color: 'orange',
     },
+    F: {
+      radius: 0.3,
+      color: 'green',
+    },
+    Cl: {
+      radius: 0.4,
+      color: 'green',
+    },
+    Br: {
+      radius: 0.4,
+      color: 'green',
+    },
+    I: {
+      radius: 0.4,
+      color: 'green',
+    },
+    He: {
+      radius: 0.4,
+      color: 'green',
+    },
+    Ne: {
+      radius: 0.4,
+      color: 'green',
+    },
   }),
 )
-
-// get ATOMS H element
