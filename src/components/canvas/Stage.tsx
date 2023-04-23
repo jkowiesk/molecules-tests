@@ -7,7 +7,7 @@ import { useEffect, useRef } from 'react'
 import { useThree } from '@react-three/fiber'
 
 type Props = {
-  molecule: Molecule
+  molecule?: Molecule
 }
 
 export default function Stage({ molecule }: Props) {

@@ -12,7 +12,6 @@ export default function Scene({ children, ...props }) {
 
   useEffect(() => {
     setOrtho(camera === 'orthographic')
-    console.log(camera)
   }, [camera])
 
   return (
@@ -21,7 +20,6 @@ export default function Scene({ children, ...props }) {
       <PerspectiveCamera position={[0, 0, 15]} near={0.1} far={1000} fov={100} makeDefault={!ortho} />
       {/* @ts-ignore*/}
       <OrthographicCamera position={[0, 0, 15]} near={0.1} zoom={100} far={1000} makeDefault={ortho} />
-      <color args={['#0891b2']} attach='background' />
       <directionalLight intensity={1} position={[1, 1, 0]} />
       <ambientLight intensity={0.1} />
       {children}

@@ -19,7 +19,7 @@ export default function Frame() {
   }
 
   return (
-    <div className='fixed top-0 w-32 p-2 bg-green-200 top-16 right-16 h-fit rounded-xl'>
+    <div className='fixed w-32 p-2 bg-green-200 top-[90%] right-16 h-fit rounded-xl'>
       <Listbox as='section' className='flex flex-col justify-center' value={selectedCamera} onChange={selectCamera}>
         <Listbox.Button>{selectedCamera.display}</Listbox.Button>
         <Transition
