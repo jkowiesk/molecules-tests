@@ -1,5 +1,3 @@
-import { parseSdf } from '@/utils/sdfParser'
-import fs from 'fs'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
