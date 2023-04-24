@@ -12,7 +12,7 @@ export default function Atom({ position, symbol }: Props) {
   return (
     <>
       <mesh position={position}>
-        <sphereGeometry args={[radius, 30, 30]} />
+        <sphereGeometry args={[radius * (4 / 5), 30, 30]} />
         <meshBasicMaterial color={color} />
       </mesh>
     </>

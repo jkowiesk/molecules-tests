@@ -14,7 +14,7 @@ const Stage = dynamic(() => import('@/components/canvas/Stage'), { ssr: false })
 export default function Page(props) {
   return (
     <section className='flex-1 w-full from-black to-background bg-gradient-to-b grid place-items-center'>
-      <div className=''></div>
+      <h1 className=''></h1>
     </section>
   )
 }
