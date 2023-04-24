@@ -5,15 +5,26 @@ import BondFC from './Bond'
 import * as THREE from 'three'
 import { useEffect, useRef } from 'react'
 import { useThree } from '@react-three/fiber'
+import { useQuery } from '@tanstack/react-query'
+import { getMolecule } from '@/utils/firebase'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/redux/store'
 
 type Props = {
-  molecule: Molecule
+  molecule?: Molecule
 }
 
-export default function Stage({ molecule }: Props) {
+export default function Stage() {
   // remove from atoms symbol property
   const moleculeRef = useRef<THREE.Group>()
-  const { bonds, atoms } = molecule
+  const id = useSelector((state: RootState) => state.searched.value)
+
+  const { data: molecule, isFetching, isFetched } = useQuery({ queryKey: [id], queryFn: () => getMolecule(id) })
+  const { atoms, bonds } = molecule || { atoms: [], bonds: [] }
+
+  if (isFetching) {
+    return <></>
+  }
 
   return (
     <>

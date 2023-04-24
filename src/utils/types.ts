@@ -18,3 +18,8 @@ export type Molecule = {
   atoms: Atom[]
   bonds: Bond[]
 }
+
+export type MoleculeID = {
+  id: string
+  common_name: string
+}

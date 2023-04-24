@@ -6,10 +6,12 @@ module.exports = {
     extend: {
       colors: {
         purple: {
-          primary: '#7F5AF0',
-          secondary: '#647DEE',
+          primary: '#724C9D',
+          secondary: '#443C68',
+          tertiary: '#2A2A3A',
         },
         background: '#16161a',
+        temp: '#18122B',
         headline: '#fffffe',
         paragraph: '#94a1b2',
         contrast: '#2cb67d',
