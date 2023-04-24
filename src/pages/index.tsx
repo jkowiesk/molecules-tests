@@ -1,3 +1,4 @@
+import Combo from '@/components/dom/Combo'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
@@ -12,7 +13,10 @@ const Stage = dynamic(() => import('@/components/canvas/Stage'), { ssr: false })
 export default function Page(props) {
   return (
     <section className='flex-1 w-full from-black to-background bg-gradient-to-b grid place-items-center'>
-      <h1 className=''></h1>
+      <div className=''>
+        <h1 className='text-4xl text-headline'>Search...</h1>
+        <Combo />
+      </div>
     </section>
   )
 }
@@ -20,5 +24,5 @@ export default function Page(props) {
 // Canvas components go here
 // It will receive same props as the Page component (from getStaticProps, etc.)
 Page.canvas = (props) => {
-  return <></>
+  return <Stage />
 }
