@@ -20,7 +20,7 @@ export const getMolecules = async () => {
 
 export const getMolecule = async (id: string) => {
   if (id == '') {
-    return { id: '', common_name: '', atoms: [], bonds: [] } as Molecule
+    return { id: '', common_name: '', atoms: [], bonds: [], inchi: '', ph: '', weight: '', formula: '' } as Molecule
   }
   const moleculeDoc = await getDoc(doc(db, 'molecules', id))
   return moleculeDoc.data() as Molecule

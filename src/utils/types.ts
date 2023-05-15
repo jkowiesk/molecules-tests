@@ -17,6 +17,11 @@ export type Bond = {
 export type Molecule = {
   atoms: Atom[]
   bonds: Bond[]
+  common_name: String
+  inchi: String
+  ph: String
+  formula: String
+  weight: String
 }
 
 export type MoleculeID = {

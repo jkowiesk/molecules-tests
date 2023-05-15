@@ -11,9 +11,6 @@
 // bond.userData = { type: 'bond' }
 // bon
 
-import { Bond } from '@/utils/types'
-import { useHelper } from '@react-three/drei'
-import { Vector3 } from '@react-three/fiber'
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 

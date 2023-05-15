@@ -1,4 +1,5 @@
 import Combo from '@/components/dom/Combo'
+import CompoundInfo from '@/components/dom/CompoundInfo'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
@@ -12,12 +13,15 @@ const Stage = dynamic(() => import('@/components/canvas/Stage'), { ssr: false })
 // Dom components go here
 export default function Page(props) {
   return (
-    <section className='flex-1 w-full from-black to-background bg-gradient-to-b grid place-items-center'>
-      <div className=''>
-        <h1 className='text-4xl text-headline'>Search...</h1>
-        <Combo />
+    <>
+      <div className='w-full col-span-3 from-black to-background bg-gradient-to-b grid place-items-center'>
+        <div className='flex flex-col gap-2'>
+          <h1 className='text-4xl text-headline'>Search...</h1>
+          <Combo />
+        </div>
       </div>
-    </section>
+      <CompoundInfo />
+    </>
   )
 }
 

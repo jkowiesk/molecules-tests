@@ -20,7 +20,7 @@ export default function Scene({ children, ...props }) {
       <PerspectiveCamera position={[0, 0, 15]} near={0.1} far={1000} fov={100} makeDefault={!ortho} />
       {/* @ts-ignore*/}
       <OrthographicCamera position={[0, 0, 15]} near={0.1} zoom={100} far={1000} makeDefault={ortho} />
-      <directionalLight intensity={1} position={[1, 1, 0]} />
+      <directionalLight intensity={1} position={[-1, 1, 0]} />
       <ambientLight intensity={0.1} />
       {children}
       <OrbitControls />
